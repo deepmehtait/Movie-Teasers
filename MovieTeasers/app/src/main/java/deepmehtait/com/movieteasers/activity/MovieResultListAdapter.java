@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ import butterknife.ButterKnife;
 import deepmehtait.com.movieteasers.R;
 import deepmehtait.com.movieteasers.modals.Movie;
 import deepmehtait.com.movieteasers.utils.AppBaseURLs;
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 /**
  * Created by deepmetha on 9/17/17.
@@ -58,10 +60,17 @@ public class MovieResultListAdapter extends RecyclerView.Adapter<MovieResultList
         }
         int orientation = context.getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            Picasso.with(context).load(AppBaseURLs.IMDB_BASE_IMAGE_URL + "w342" + md.getPoster_path()).centerCrop().fit().into(holder.posterImage);
+            final int radius = 15;
+            final int margin = 15;
+            final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+            Picasso.with(context).load(AppBaseURLs.IMDB_BASE_IMAGE_URL + "w342" + md.getPoster_path()).centerCrop().fit().transform(transformation).into(holder.posterImage);
 
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            Picasso.with(context).load(AppBaseURLs.IMDB_BASE_IMAGE_URL + "w780" + md.getBackdrop_path()).fit().into(holder.posterImage);
+            final int radius = 25;
+            final int margin = 25;
+            final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+
+            Picasso.with(context).load(AppBaseURLs.IMDB_BASE_IMAGE_URL + "w780" + md.getBackdrop_path()).fit().transform(transformation).into(holder.posterImage);
             holder.overview.setText(md.getOverview());
         }
 
