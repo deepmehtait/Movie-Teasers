@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/detailViewPoster"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:src="@drawable/noimg"/>
+        <RelativeLayout
+            android:id="@+id/movieTitleRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/accent">
+            <TextView
+                android:id="@+id/movieTitleRelative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="Movie Title"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toLeftOf="@+id/thumbsImage"
+                android:layout_toStartOf="@+id/thumbsImage" />
+
+            <ImageView
+                android:layout_marginRight="5dp"
+                android:id="@+id/thumbsImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/movieTitleRelative"
+                app:srcCompat="@drawable/thumbsup_green" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/youtubeRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_dark_background">
+            <com.google.android.youtube.player.YouTubePlayerView
+                android:layout_margin="5dp"
+                android:id="@+id/player"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/overivewRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_dark_background">
+            <TextView
+                android:id="@+id/overivewRelative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textSize="20sp"
+                android:text="Movie Title"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/generRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/divider">
+            <TextView
+                android:id="@+id/generRelative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textSize="15sp"
+                android:text="Movie Title"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/voteRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/divider">
+            <TextView
+                android:id="@+id/voteRelative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textSize="15sp"
+                android:text="Movie Title"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

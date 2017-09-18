@@ -18,7 +18,7 @@ public class Movie {
     int id;
     int vote_count;
     long popularity;
-    long vote_average;
+    Double vote_average;
     String backdrop_path;
     String genre;
     String overview;
@@ -31,10 +31,20 @@ public class Movie {
         this.id = jsonObject.getInt("id");
         this.vote_count = jsonObject.getInt("vote_count");
         this.popularity = jsonObject.getLong("popularity");
-        this.vote_average = jsonObject.getLong("vote_average");
+        this.vote_average = jsonObject.getDouble("vote_average");
         this.backdrop_path = jsonObject.getString("backdrop_path");
         this.genre = parseGenerAndGetString(jsonObject.getJSONArray("genre_ids"));
+        this.overview = jsonObject.getString("overview");
+        this.poster_path = jsonObject.getString("poster_path");
+        this.release_date = jsonObject.getString("release_date");
+        this.title = jsonObject.getString("title");
 
+
+    }
+
+    public Movie(String title, String year) {
+        this.title = title;
+        this.release_date = year;
     }
 
     public static ArrayList<Movie> parseJsonArrayRespone(JSONArray jsonArray) {
@@ -78,7 +88,7 @@ public class Movie {
         return popularity;
     }
 
-    public long getVote_average() {
+    public Double getVote_average() {
         return vote_average;
     }
 

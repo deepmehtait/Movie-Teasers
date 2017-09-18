@@ -11,24 +11,23 @@ import android.util.Log;
 
 public class AppStatus {
 
-    private static AppStatus instance=new AppStatus();
     static Context context;
+    private static AppStatus instance = new AppStatus();
     ConnectivityManager connectivityManager;
-    boolean connected=false;
+    boolean connected = false;
 
-    public static AppStatus getInstance(Context ctx){
+    public static AppStatus getInstance(Context ctx) {
         context = ctx.getApplicationContext();
         return instance;
     }
 
-    public boolean isOnline(){
-        try{
-            connectivityManager =(ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo networkInfo=connectivityManager.getActiveNetworkInfo();
+    public boolean isOnline() {
+        try {
+            connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
             connected = networkInfo != null && networkInfo.isAvailable() && networkInfo.isConnected();
             return connected;
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             Log.v("AppStatus Class", e.toString());
 
         }
