@@ -37,7 +37,7 @@ The following **additional** features are implemented:
 * [x] Impmented connection staus snackbar for better user experience.
 
 ## Video Walkthrough
-
+![Video](https://github.com/deepmehtait/Movie-Teasers/blob/master/Video/Demo_3.m4v?raw=true)
 
 ## Open-source libraries used
 
