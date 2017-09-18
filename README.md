@@ -1,5 +1,3 @@
-Android based application which helps to view and find currently ongoing movies near by.
-
 # Movie Teasers
 
 **Movie Teasers** shows the latest movies currently playing in theaters. The app utilizes the Movie Database API to display images and basic information about these movies to the user.
