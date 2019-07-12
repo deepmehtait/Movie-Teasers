@@ -1,4 +1,6 @@
 # Movie Teasers
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+<br/>
 ![Img](/MovieTeasers/app/src/main/res/mipmap-xxhdpi/ic_launcher.png?raw=true)
 
 **Movie Teasers** shows the latest movies currently playing in theaters. The app utilizes the Movie Database API to display images and basic information about these movies to the user.
